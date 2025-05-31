@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Iinclude
 LDFLAGS = -lasound -ludev
-SRC = src/main.c src/alsa_utils.c src/udev_utils.c
+SRC = src/main.c src/alsa_utils.c src/udev_utils.c src/env_utils.c src/string_utils.c
 OBJ = $(SRC:.c=.o)
 TARGET = build/aconnectd
 

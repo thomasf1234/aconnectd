@@ -1,0 +1,12 @@
+[Unit]
+Description=ALSA sequencer auto subscription service
+After=network.target sound.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/aconnectd
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target

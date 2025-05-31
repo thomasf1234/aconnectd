@@ -33,7 +33,7 @@ int check_client_port(snd_seq_t *seq_handle, int client_id, int port)
     while (snd_seq_query_next_port(seq_handle, port_info) >= 0) 
     {
         int found_port = snd_seq_port_info_get_port(port_info);
-        fprintf(stderr, "Found Client ID:port %d:%d.\n", client_id, found_port);
+
         if (found_port == port) 
         {
             return 1; // Client and port exist
@@ -58,7 +58,7 @@ int check_subscription(snd_seq_t *seq_handle, int src_client_id, int src_client_
     while (snd_seq_query_port_subscribers(seq_handle, subs) >= 0) 
     {
         tmp_addr = snd_seq_query_subscribe_get_addr(subs);
-        fprintf(stderr, "Found Subscriber %d:%d Connect To %d:%d.\n", src_addr.client, src_addr.port, tmp_addr->client, tmp_addr->port);
+        printf("Found Subscriber %d:%d Connect To %d:%d.\n", src_addr.client, src_addr.port, tmp_addr->client, tmp_addr->port);
 
         if (tmp_addr->client == dest_client_id && tmp_addr->port == dest_client_port) 
         {

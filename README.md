@@ -6,7 +6,7 @@ Small POC service to listen for udev "add" events and auto subscribe them to an 
 
 ```
 $ make 
-$ cp build/aconnectd packages/aconnectd_0.1.0_amd64/opt/aconnectd/bin/aconnectd
+$ cp build/aconnectd packages/aconnectd_amd64/opt/aconnectd/bin/aconnectd
 $ cd packages
-$ dpkg-deb --build ./aconnectd_0.1.0_amd64
+$ dpkg-deb --build ./aconnectd_amd64
 ```
